@@ -1,0 +1,93 @@
+/* Vibrant green theme for Starlight */
+:root {
+	/* Light mode accent colors (darker green for contrast against white) */
+	--sl-color-accent-low: #d3f9d8;
+	--sl-color-accent: #2b8a3e;
+	--sl-color-accent-high: #083812;
+	/* Light mode background */
+	--sl-color-bg: #ffffff;
+}
+
+:root[data-theme='dark'] {
+	/* Dark mode accent colors (brighter neon green for contrast against dark) */
+	--sl-color-accent-low: #082811;
+	--sl-color-accent: #40c057;
+	--sl-color-accent-high: #b2f2bb;
+	/* Dark mode background */
+	--sl-color-bg: #101214;
+}
+
+/* Mermaid Diagram Container */
+.mermaid-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Maximize Button */
+.mermaid-maximize-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: var(--sl-color-bg-nav);
+  color: var(--sl-color-text-accent);
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.mermaid-maximize-btn:hover {
+  opacity: 1;
+  background-color: var(--sl-color-bg-inline-code);
+}
+
+/* Fullscreen Modal */
+.mermaid-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.mermaid-modal.active {
+  display: flex;
+}
+
+.mermaid-modal-content {
+  background-color: var(--sl-color-bg);
+  border-radius: 8px;
+  padding: 2rem;
+  width: 90vw;
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* Close Button */
+.mermaid-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--sl-color-text);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
