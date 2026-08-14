@@ -43,6 +43,7 @@ export default defineConfig({
 						{ label: 'Network & Routing', translations: { es: 'Redes y Enrutamiento' }, slug: 'guides/network-routing' },
 						{ label: 'Tools & Dependencies', translations: { es: 'Herramientas y Dependencias' }, slug: 'guides/tools-dependencies' },
 						{ label: 'Pipeline Walkthrough', translations: { es: 'Recorrido del Pipeline' }, slug: 'guides/pipeline-walkthrough' },
+						{ label: 'Client Portal Production Runbook', translations: { es: 'Guía de Producción del Portal' }, slug: 'guides/client-portal-production' },
 					],
 				}
 			],
