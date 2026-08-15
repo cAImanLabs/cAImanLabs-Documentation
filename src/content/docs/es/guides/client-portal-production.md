@@ -67,6 +67,18 @@ Usar un volumen Docker nombrado, por ejemplo `caimanlabs_pocketbase_data`, para 
 4. Crear una deploy key de GitHub y clonar los repositorios en `/srv/caimanlabs/`.
 5. Crear `/srv/caimanlabs/pocketbase/.env` con una clave `PB_ENCRYPTION_KEY` única de 32 caracteres y permisos `600`. Nunca guardarla en Git.
 
+## Política de host de compilación y acceso operativo
+
+El Mac mini u host de operaciones no se debe usar para compilar. No dejar allí imágenes/builders Docker, artefactos de `docker compose build`, servidores Vite, procesos de build estáticos, runners CI ni archivos de release. Compilar en OVH o en un runner CI dedicado y publicar los artefactos resultantes en OVH.
+
+El túnel SSH de Cloudflare se usa solo para acceso operativo:
+
+```bash
+ssh -o ProxyCommand="cloudflared access ssh --hostname %h" racc@ssh.11061996.xyz
+```
+
+No guardar la contraseña SSH en este repositorio, comandos, archivos de entorno ni documentación. Tratarla como secreto y rotarla si se compartió.
+
 ## Compose de PocketBase
 
 Crear `/srv/caimanlabs/pocketbase/compose.yml`:

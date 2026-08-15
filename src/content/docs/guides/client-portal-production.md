@@ -71,6 +71,18 @@ Use a named Docker volume, for example `caimanlabs_pocketbase_data`, for `/pb/pb
 4. Create a GitHub deploy key with read-only access and clone the repositories into `/srv/caimanlabs/`.
 5. Create `/srv/caimanlabs/pocketbase/.env` with a unique 32-character `PB_ENCRYPTION_KEY`. Restrict it to the deployment user (`chmod 600`). Never commit it.
 
+## Build-host policy and operations access
+
+The Mac mini/operations host must not be used as a build host. Do not leave Docker builder images, `docker compose build` artifacts, Vite dev servers, static build processes, CI runners or release files there. Build on OVH or a dedicated CI runner, then deploy the resulting artifacts to OVH.
+
+The Cloudflare SSH tunnel is for operations access only:
+
+```bash
+ssh -o ProxyCommand="cloudflared access ssh --hostname %h" racc@ssh.11061996.xyz
+```
+
+Do not store the SSH password in this repository, commands, environment files or documentation. Treat it as a secret and rotate it if it has been shared.
+
 ## PocketBase production compose file
 
 Create `/srv/caimanlabs/pocketbase/compose.yml`:

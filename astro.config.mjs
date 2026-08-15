@@ -39,6 +39,9 @@ export default defineConfig({
 					translations: { es: 'Guías' },
 					items: [
 						{ label: 'System Overview', translations: { es: 'Resumen del Sistema' }, slug: 'guides/overview' },
+						{ label: 'Client Portal', translations: { es: 'Portal de Clientes' }, slug: 'guides/client-portal' },
+						{ label: 'Admin Portal', translations: { es: 'Portal Admin' }, slug: 'guides/admin-portal' },
+						{ label: 'Data Platform & MCP', translations: { es: 'Plataforma de Datos y MCP' }, slug: 'guides/data-platform' },
 						{ label: 'Cluster Deployment', translations: { es: 'Despliegue del Clúster' }, slug: 'guides/cluster-deployment' },
 						{ label: 'Network & Routing', translations: { es: 'Redes y Enrutamiento' }, slug: 'guides/network-routing' },
 						{ label: 'Tools & Dependencies', translations: { es: 'Herramientas y Dependencias' }, slug: 'guides/tools-dependencies' },
