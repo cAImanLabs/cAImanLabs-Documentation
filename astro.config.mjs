@@ -32,7 +32,7 @@ export default defineConfig({
 					lang: 'es'
 				}
 			},
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/rubenalejandrocalderoncorona/socialmedia-ai-e2e-pipelines' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/cAImanLabs/socialmedia-ai-e2e-pipelines' }],
 			sidebar: [
 				{
 					label: 'Guides',
@@ -47,6 +47,20 @@ export default defineConfig({
 						{ label: 'Tools & Dependencies', translations: { es: 'Herramientas y Dependencias' }, slug: 'guides/tools-dependencies' },
 						{ label: 'Pipeline Walkthrough', translations: { es: 'Recorrido del Pipeline' }, slug: 'guides/pipeline-walkthrough' },
 						{ label: 'Client Portal Production Runbook', translations: { es: 'Guía de Producción del Portal' }, slug: 'guides/client-portal-production' },
+					],
+				},
+				{
+					label: 'Social Media & AI Pipelines',
+					translations: { es: 'Pipelines y Redes Sociales' },
+					items: [
+						{ label: 'E2E Architecture', translations: { es: 'Arquitectura E2E' }, slug: 'pipelines/architecture' },
+						{ label: 'Postiz Deployment', translations: { es: 'Despliegue de Postiz' }, slug: 'pipelines/postiz-deployment' },
+						{ label: 'Facebook Pages', translations: { es: 'Páginas de Facebook' }, slug: 'pipelines/facebook-pages' },
+						{ label: 'Instagram Pages & DMs', translations: { es: 'Páginas y DMs de Instagram' }, slug: 'pipelines/instagram-pages' },
+						{ label: 'TikTok Integration', translations: { es: 'Integración de TikTok' }, slug: 'pipelines/tiktok-integration' },
+						{ label: 'X (Twitter) Integration', translations: { es: 'Integración de X (Twitter)' }, slug: 'pipelines/x-integration' },
+						{ label: 'LinkedIn Integration', translations: { es: 'Integración de LinkedIn' }, slug: 'pipelines/linkedin-integration' },
+						{ label: 'Threads Integration', translations: { es: 'Integración de Threads' }, slug: 'pipelines/threads-integration' },
 					],
 				}
 			],
