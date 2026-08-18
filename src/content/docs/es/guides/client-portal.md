@@ -40,6 +40,32 @@ flowchart LR
 | Facturación | Plan, renovación, facturas e información de pago. | Siempre |
 | Configuración | Perfil de usuario y controles separados de funcionalidades con confirmación al guardar. | Siempre |
 
+## Plan de implementación interactivo
+
+El **Plan** es la primera pestaña de Progreso. Sus etapas y elementos se construyen con los registros aplicables de `integration_steps` del negocio, por lo que no hay saltos en la numeración cuando no se selecciona una funcionalidad.
+
+- Cada elemento del plan explica su responsabilidad y lleva al espacio donde el cliente puede aportar o cambiar esa información.
+- El panel de incorporación de Inicio muestra la misma explicación en un elemento desplegable e incluye un enlace directo al espacio correspondiente.
+- Etiquetas, etapas, descripciones y pestañas de Progreso usan el idioma seleccionado: español, inglés o portugués.
+
+El resumen de Agentes se calcula con las cuatro funcionalidades de agente seleccionadas, no con pasos genéricos del onboarding; por eso su denominador siempre es correcto:
+
+| Funcionalidad | Instancia de agente |
+| --- | --- |
+| `wa_business` | WhatsApp Agent |
+| `chat_agent` | Website Chat Agent |
+| `phone_calls_agent` | Phone Calls Agent |
+| `social_media_generation_agent` | Media Generation Agent |
+
+## Flujo de contexto por agente
+
+Para cada agente seleccionado, el espacio **Agentes** incluye dos pasos de contexto guardados por separado:
+
+1. **Qué debe resolver el agente** — tareas, resultados, preguntas de clientes y reglas de escalamiento esperados.
+2. **Información del negocio** — servicios, políticas, menú/catálogo, precios, estilo, tono y procesos operativos.
+
+Cada paso acepta texto y archivos adjuntos. El texto se almacena en `agent_contexts`; los archivos se almacenan en `business_files` con una sección de agente/tipo, por lo que también son visibles y administrables desde **Archivos**.
+
 ## Navegación basada en funcionalidades
 
 La barra lateral no es fija. `businesses.functionalities` controla menú y plan:

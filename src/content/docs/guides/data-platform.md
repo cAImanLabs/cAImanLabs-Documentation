@@ -11,7 +11,7 @@ PocketBase is the shared backend for Client Portal and Admin Portal. It provides
 | --- | --- |
 | Identity and business | `users`, `businesses` |
 | Delivery and activity | `integration_steps`, `activity_log`, `agent_instances`, `channel_connections` |
-| Context and files | `media_assets`, `business_files` |
+| Context and files | `media_assets`, `business_files`, `agent_contexts` |
 | Commerce | `products`, `product_variants`, `business_billing`, `billing_invoices` |
 | Scheduling | `support_appointments`, `reservation_configurations` |
 
@@ -23,6 +23,7 @@ PocketBase is the shared backend for Client Portal and Admin Portal. It provides
 - `pb_hooks/` contains business automation. New users bootstrap a business, a billing record and generic onboarding steps.
 - Business changes recalculate the applicable implementation stages. Channel and media hooks update associated progress/activity safely.
 - The admin-access hook prevents a normal user from setting `is_admin` themselves.
+- `agent_contexts` stores one record per business, agent type and context kind (`agent_task` or `business_context`). Its access rules are scoped through `business.owner = @request.auth.id`; the matching client can read and update its records.
 
 ## OAuth
 

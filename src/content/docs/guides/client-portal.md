@@ -40,6 +40,32 @@ flowchart LR
 | Billing | Plan, renewal, invoices and payment information. | Always |
 | Settings | User profile and separate business-functionality controls with explicit save confirmation. | Always |
 
+## Interactive implementation plan
+
+The **Plan** is the first Progress tab. Its stages and items are built from the business's applicable `integration_steps` records, so there are no skipped stage numbers when a feature is not selected.
+
+- Each plan item has a short explanation of its responsibility and navigates to the workspace where the client can provide or change that information.
+- The Home onboarding panel exposes the same explanation in an expandable item, plus a direct link to the relevant workspace.
+- Plan labels, stage names, descriptions and progress tabs use the selected Spanish, English or Portuguese portal language.
+
+The Agent summary is derived from the four selected agent features—not from generic onboarding steps—so its denominator is always accurate:
+
+| Feature | Agent instance |
+| --- | --- |
+| `wa_business` | WhatsApp Agent |
+| `chat_agent` | Website Chat Agent |
+| `phone_calls_agent` | Phone Calls Agent |
+| `social_media_generation_agent` | Media Generation Agent |
+
+## Agent context workflow
+
+For every selected agent, the **Agents** workspace has two separately stored context steps:
+
+1. **What the agent should solve** — desired tasks, outcomes, customer questions and escalation rules.
+2. **Business information** — services, policies, menu/catalog, prices, style, tone and operating processes.
+
+Each step accepts typed text and file attachments. Text is stored in `agent_contexts`; attachments are stored in `business_files` with an agent/type section value, so they remain visible and manageable in the central **Files** workspace.
+
 ## Feature-driven navigation
 
 The portal does not use a fixed menu. `businesses.functionalities` controls the menu and implementation plan:

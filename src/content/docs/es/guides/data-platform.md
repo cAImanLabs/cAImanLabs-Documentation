@@ -11,7 +11,7 @@ PocketBase es el backend compartido de ambos portales. Proporciona autenticació
 | --- | --- |
 | Identidad y negocio | `users`, `businesses` |
 | Entrega y actividad | `integration_steps`, `activity_log`, `agent_instances`, `channel_connections` |
-| Contexto y archivos | `media_assets`, `business_files` |
+| Contexto y archivos | `media_assets`, `business_files`, `agent_contexts` |
 | Comercio | `products`, `product_variants`, `business_billing`, `billing_invoices` |
 | Agenda | `support_appointments`, `reservation_configurations` |
 
@@ -22,6 +22,7 @@ PocketBase es el backend compartido de ambos portales. Proporciona autenticació
 - `pb_migrations/` define el esquema. Nunca editar una migración ya desplegada; agregar otra.
 - `pb_hooks/` automatiza negocio: usuario nuevo crea negocio, facturación y pasos iniciales; cambios del negocio recalculan las etapas; canales/medios actualizan progreso y actividad.
 - El hook admin impide que un usuario normal cambie `is_admin`.
+- `agent_contexts` guarda un registro por negocio, tipo de agente y tipo de contexto (`agent_task` o `business_context`). Sus reglas se limitan mediante `business.owner = @request.auth.id`; el cliente correspondiente puede leer y actualizar sus registros.
 - Google OAuth se configura en **Collections → users → configuración de colección → OAuth2** y usa `https://api.caimanlabs.com.mx/api/oauth2-redirect` en producción.
 
 Guardar Client Secret de Google solo en PocketBase. No colocarlo en Vite, código fuente ni este repositorio.
